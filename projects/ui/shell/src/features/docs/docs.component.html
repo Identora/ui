@@ -1,0 +1,35 @@
+<div class="clr-row clr-justify-content-center">
+  <div class="clr-col-10">
+    <h1>Anexos de Documentação</h1>
+    <p class="lead">
+      Essa é a landing page oficial de anexos de documentação dos softwares da Plataforma de Inovação e
+      Desenvolvimento, onde você encontra guias detalhados, exemplos práticos e recursos para desenvolver,
+      integrar e manter os projetos de forma padronizada, eficiente e segura.
+    </p>
+    <div class="clr-row">
+      <div class="clr-col-sm-12 clr-col-md-12 clr-col-lg-6 clr-col-xl-4" *ngFor="let doc of docs">
+        <div class="card">
+          <div class="card-block">
+            <div class="card-title">
+              <cds-icon [shape]="doc.doc_icon"></cds-icon>
+              {{ doc.doc_name }}
+            </div>
+            <div class="card-text">{{ doc.doc_info }}</div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-link" (click)="goToDoc(doc.doc_path)">Ler mais</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="docs.length == 0">
+      <br><br>
+      <div role="gridcell" class='no-content' cds-layout="vertical gap:md align:center">
+        <slot>
+          <cds-icon shape="filter" size="xl"></cds-icon>
+          <p>Nenhum documento a ser exibido.</p>
+        </slot>
+      </div>
+    </div>
+  </div>
+</div>

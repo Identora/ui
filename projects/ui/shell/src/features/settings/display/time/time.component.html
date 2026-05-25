@@ -1,0 +1,15 @@
+<form clrForm [formGroup]="settingsForm">
+  <table class="table table-vertical table-noborder">
+    <tbody>
+      <tr>
+        <th>Horário do Sistema</th>
+        <td>
+          <select formControlName="timezone" required style="background-color: #fafafa;">
+            <option *ngFor="let timezone of offsetTmz" [ngValue]='timezone.value'>{{timezone.view}}</option>
+          </select>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</form>

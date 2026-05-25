@@ -1,0 +1,50 @@
+.card-media-description {
+  width: -webkit-fill-available;
+}
+
+.card-media-title h4 {
+  margin-top: 15px;
+}
+
+::ng-deep .clr-accordion-header-button {
+  display: table;
+}
+
+::ng-deep .clr-accordion-status {
+  float: right;
+  transform: scale(-1, 1);
+}
+
+::ng-deep .clr-accordion-title {
+  float: left;
+}
+
+.left {
+  float: left;
+  padding: 0px 20px 0px 0px;
+  min-height: 100%;
+}
+
+.filler {
+  display: block;
+  float: none;
+  height: 100%;
+}
+
+.right {
+  float: right;
+  min-height: 100%;
+  max-width: 100px;
+  text-align: center;
+  button {
+    margin: 0 auto;
+  }
+}
+
+.contain {
+  margin: 15px;
+  padding-right: 25px;
+  width: 100%;
+  position: relative;
+  min-height: 75px;
+}

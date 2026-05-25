@@ -1,0 +1,54 @@
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.cont {
+  margin-top: 100px;
+  position: absolute;
+  max-width: -webkit-fill-available;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  z-index: 1;
+  position: relative;
+}
+
+.error span {
+  font-size: 90px;
+  font-weight: 900;
+  white-space: pre-line;
+  line-height: 1;
+  letter-spacing: 3px;
+}
+
+button {
+  width: 100px;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 25px;
+  border: none;
+  background-color: #150035;
+  color: #ffb000;
+  position: relative;
+}
+
+button::after {
+  content: '';
+  width: 96px;
+  height: 35px;
+  border: 3px solid #fff;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  z-index: -1;
+}

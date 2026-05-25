@@ -1,0 +1,17 @@
+<div class="container-column">
+  @if (breadCrumb) {
+    <div class="container-fixed">
+      <div class="clr-row">
+        <div class="clr-col-auto">
+          <cds-icon [shape]="breadCrumb.icon"></cds-icon>
+        </div>
+        <div class="clr-col">
+          <clr-breadcrumbs [items]="breadCrumb.urls"></clr-breadcrumbs>
+        </div>
+      </div>
+    </div>
+  }
+  <div class="container-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

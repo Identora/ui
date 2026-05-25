@@ -1,0 +1,27 @@
+<div class="app-launcher-trigger">
+    <clr-dropdown>
+        <button class="nav-icon" clrDropdownTrigger title="Aplicações">
+            <cds-icon shape="applications"></cds-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-left" class="app-launcher-menu">
+            <div class="app-launcher-header">Aplicações</div>
+            <div class="app-launcher-grid">
+                <ng-container *ngIf="loading">
+                    <div class="app-launcher-loading">
+                        <span class="spinner spinner-sm"></span>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="!loading && apps.length === 0">
+                    <p class="app-launcher-empty">Nenhuma aplicação disponível</p>
+                </ng-container>
+                <a *ngFor="let app of apps" [href]="app.app_url" class="app-launcher-card" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="app-launcher-icon">
+                        <cds-icon shape="application" size="32"></cds-icon>
+                    </div>
+                    <span class="app-launcher-name">{{ app.name }}</span>
+                </a>
+            </div>
+        </clr-dropdown-menu>
+    </clr-dropdown>
+</div>

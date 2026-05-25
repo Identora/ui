@@ -1,0 +1,16 @@
+.loading {
+  display: flex;
+  clr-spinner { margin: auto; }
+}
+
+.card-media-image {
+  height: 48px;
+  width: 48px;
+}
+
+.card-text-custom { margin: 0; }
+
+.card-media-description {
+  align-self: center;
+  .card-media-title h6 { margin: 0; }
+}

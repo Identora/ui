@@ -1,0 +1,37 @@
+.profile-picture {
+  min-width: 75px;
+  min-height: 75px;
+  max-height: 75px;
+  border: 1px solid #FFFFFF;
+  position: relative;
+  .card-media-image { min-height: 75px; min-width: 75px; }
+  i {
+    position: absolute;
+    top: 20px;
+    right: -7px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: cornflowerblue;
+  }
+}
+
+.bubble-card {
+  border-radius: 10px;
+  .profile-picture-bubble {
+    min-width: 130px;
+    min-height: 130px;
+    max-height: 130px;
+    border: 1px solid #FFFFFF;
+    position: relative;
+    .card-media-image-bubble { min-height: 130px; max-height: 130px; min-width: 130px; max-width: 130px; }
+  }
+  .stats {
+    .articles, .followers, .rating { font-size: 10px; color: #a1aab9; }
+    .number { font-weight: 500; }
+  }
+}

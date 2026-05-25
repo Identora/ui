@@ -1,0 +1,64 @@
+<clr-modal [(clrModalOpen)]="visible" [clrModalClosable]="true">
+  <h3 class="modal-title">Iniciar nova Conversa</h3>
+  <div class="modal-body">
+    <div class='loading' *ngIf="loading">
+      <div class='teste'>
+        <clr-spinner></clr-spinner>
+      </div>
+    </div>
+    <div *ngIf="!loading">
+      <div
+        class="card-text card-text-custom"
+        style="margin-top: 10px;"
+        *ngFor="let usuario of usuariosTeste; let idx = index;"
+      >
+        <div
+          class="card clickable"
+          style="margin-top: 0px;"
+          *ngIf="usuario && idx < actualPage * pageSize && ( idx >= (actualPage - 1) * pageSize )"
+          (click)="createChat(usuario)"
+        >
+          <div class="card-block">
+            <div class="clr-row">
+              <div class="clr-col">
+                <div class="card-media-block">
+                  <div class="profile-picture">
+                    <img src='profile.jpg' class="card-media-image">
+                  </div>
+                  <div class="card-media-description">
+                    <span class="card-media-title">
+                      <h6>{{ usuario.name }}</h6>
+                    </span>
+                    <span class="card-media-text" style="font-size: smaller">
+                      <b>{{ usuario.username }} || {{ usuario.email }}</b>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="usuariosTeste.length == 0 && !loading">
+      <div role="gridcell" class='no-content' cds-layout="vertical gap:md align:center">
+        <slot>
+          <cds-icon shape="filter" size="xl"></cds-icon>
+          <p>Nenhum resultado encontrado.</p>
+        </slot>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer" *ngIf="!loading">
+    <cds-pagination aria-label="pagination">
+      <cds-pagination-button aria-label="go to first" action="first" (click)="actualPage = 1" [disabled]="actualPage == 1"></cds-pagination-button>
+      <cds-pagination-button aria-label="go to previous" action="prev" (click)="actualPage = actualPage - 1" [disabled]="actualPage == 1"></cds-pagination-button>
+      <cds-input cds-pagination-number>
+        <input type="text" [(ngModel)]="actualPage" size="1" aria-label="current page" />
+        <cds-control-message>/ {{ pagesNumber }}</cds-control-message>
+      </cds-input>
+      <cds-pagination-button aria-label="go to next" action="next" (click)="actualPage = actualPage + 1" [disabled]="actualPage >= pagesNumber"></cds-pagination-button>
+      <cds-pagination-button aria-label="go to last" action="last" (click)="actualPage = pagesNumber" [disabled]="actualPage >= pagesNumber"></cds-pagination-button>
+    </cds-pagination>
+  </div>
+</clr-modal>

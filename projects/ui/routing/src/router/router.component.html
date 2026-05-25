@@ -1,0 +1,23 @@
+<div class='redirect' *ngIf="routed?.route_type == 'header'">
+  <router-outlet class="redirect-content"></router-outlet>
+</div>
+
+<div class='redirect' *ngIf="routed?.route_type == 'navigation'">
+  <router-outlet class="redirect-content"></router-outlet>
+</div>
+
+<div class='redirect' *ngIf="routed?.route_type == 'menu'">
+  <router-outlet class="redirect-content"></router-outlet>
+</div>
+
+<div class='redirect' *ngIf="routed?.route_type == 'item'">
+  <app-submenus [routed]="routed" [loading]="loading" [router]="router" class="redirect-content"></app-submenus>
+</div>
+
+<div class='redirect' *ngIf="routed?.route_type == 'submenu'">
+  <app-multipages [routed]="routed" [loading]="loading" [router]="router" class="redirect-content"></app-multipages>
+</div>
+
+<div class='redirect' *ngIf="routed?.route_type == 'page'">
+  <app-component-factory [route]="routed" class="redirect-content"></app-component-factory>
+</div>

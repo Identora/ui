@@ -1,0 +1,23 @@
+.header-7.header-blocked {
+  opacity: 0.6;
+}
+
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  z-index: 9999;
+  cursor: not-allowed;
+}
+
+.middle-divider {
+  flex: 1 1 auto;
+  max-width: none;
+}
+
+.header-divider { left: 1; }
+
+.header-actions {
+  flex: 0 0 auto;
+}
+

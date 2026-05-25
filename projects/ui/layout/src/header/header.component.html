@@ -1,0 +1,109 @@
+<header class="header-7" [class.header-blocked]="headerBlocked">
+    <div *ngIf="headerBlocked" class="header-overlay"></div>
+
+    <div class="header-actions" *ngIf="apps.length > 0">
+        <clr-dropdown>
+            <button class="nav-icon" clrDropdownTrigger title="Aplicações">
+                <cds-icon shape="applications"></cds-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-left">
+                <a *ngFor="let app of apps" [href]="app.app_url" clrDropdownItem target="_blank"
+                    rel="noopener noreferrer">
+                    <cds-icon shape="application"></cds-icon>
+                    {{ app.name }}
+                </a>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+    </div>
+
+    <div class="branding" style="justify-content: center;">
+        <img src="assets/images/logo/dark.png" class="card-media-image" style="margin: 10px;" />
+    </div>
+
+    <ng-container *ngFor="let header of headers">
+        <div class="header-nav" *ngIf="
+            header.route_type != 'search' &&
+            header.route_type != 'theme' &&
+            header.route_type != 'logout' &&
+            header.route_type != 'menu' &&
+            header.route_type != 'header'
+        ">
+            <a class="nav-link nav-icon" [routerLink]="header.route_path" routerLinkActive="active">
+                <cds-icon [shape]="header.route_icon"></cds-icon>
+            </a>
+        </div>
+
+        <div class="header-actions" *ngIf="(header?.routes?.length || 0) > 0 && header?.route_type == 'header'">
+            <clr-dropdown>
+                <button class="nav-icon" clrDropdownToggle>
+                    <cds-icon [shape]="header.route_icon"></cds-icon>
+                    <cds-icon shape="angle" direction="down"></cds-icon>
+                </button>
+                <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                    <a *ngFor="let navigation of header.routes" [routerLink]="navigation.route_redirect"
+                        clrDropdownItem>
+                        <div class="clr-row">
+                            <div class="clr-col-auto">
+                                <cds-icon [shape]="navigation.route_icon" />
+                            </div>
+                            <div class="clr-col">
+                                {{ navigation.route_display_name }}
+                            </div>
+                        </div>
+                    </a>
+                </clr-dropdown-menu>
+            </clr-dropdown>
+        </div>
+    </ng-container>
+
+    <div class="middle-divider"></div>
+
+    <div class="header-nav">
+        <a class="nav-link nav-icon">
+            <cds-icon *ngIf="theme.name == 'light'" (click)="this.setTheme('dark')" shape="moon"></cds-icon>
+            <cds-icon *ngIf="theme.name == 'dark'" (click)="this.setTheme('light')" shape="sun"></cds-icon>
+        </a>
+    </div>
+
+    <div class="header-nav">
+        <a class="nav-link nav-icon">
+            <cds-icon (click)="this.setDensity()" shape="landscape" direction="left"></cds-icon>
+        </a>
+    </div>
+
+    <div class="header-nav">
+        <a class="nav-link nav-icon" (click)="toggleFullscreen()">
+            <cds-icon [shape]="isFullscreen ? 'shrink' : 'resize'"></cds-icon>
+        </a>
+    </div>
+
+    <ng-container *ngFor="let header of headers">
+        <div class="header-actions" *ngIf="header.route_type == 'menu'">
+            <clr-dropdown>
+                <button class="nav-icon" clrDropdownTrigger>
+                    <cds-icon shape="cog"></cds-icon>
+                    <cds-icon shape="angle" direction="down"></cds-icon>
+                </button>
+                <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                    <a *ngFor="let navigation of header.routes" [routerLink]="navigation.route_redirect"
+                        clrDropdownItem>
+                        <div class="clr-row">
+                            <div class="clr-col-auto">
+                                <cds-icon [shape]="navigation.route_icon" />
+                            </div>
+                            <div class="clr-col">
+                                {{ navigation.route_display_name }}
+                            </div>
+                        </div>
+                    </a>
+                </clr-dropdown-menu>
+            </clr-dropdown>
+        </div>
+    </ng-container>
+
+    <div class="header-nav">
+        <a class="nav-link nav-icon" (click)="logout()">
+            <cds-icon shape="logout"></cds-icon>
+        </a>
+    </div>
+</header>

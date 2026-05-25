@@ -1,0 +1,37 @@
+<clr-vertical-nav style="display: flex; flex-flow: column; height: 100%;" [clrVerticalNavCollapsible]="true"
+  [clrVerticalNavCollapsed]="false" *ngIf="menus.length != 0">
+
+  <div>
+    <span style="flex: 0 1 auto;" *ngFor="let menu of menus">
+
+      <a clrVerticalNavLink routerLinkActive="active" [routerLink]="menu.route_redirect"
+        *ngIf="menu.route_type === 'item' || menu.routes?.length == 0">
+        <cds-icon [shape]="menu.route_icon" clrVerticalNavIcon></cds-icon> {{ menu.route_display_name }}
+      </a>
+
+      <clr-vertical-nav-group routerLinkActive="active" *ngIf="menu.route_type != 'item' && (menu.routes?.length || 0) > 0">
+        <cds-icon [shape]="menu.route_icon" clrVerticalNavIcon></cds-icon> {{ menu.route_display_name }}
+        <clr-vertical-nav-group-children *ngFor="let item of menu.routes">
+          <a clrVerticalNavLink [routerLink]="item.route_redirect" routerLinkActive="active">
+            <cds-icon [shape]="item.route_icon" clrVerticalNavIcon></cds-icon> {{item.route_display_name}}
+          </a>
+        </clr-vertical-nav-group-children>
+      </clr-vertical-nav-group>
+
+    </span>
+  </div>
+
+  <div style="flex: 999 0 auto;"></div>
+
+  <div class="nav-divider" *ngIf="docs.length > 0"></div>
+
+  <div>
+    <span style="flex: 0 1 auto;" *ngFor="let menu of docs">
+      <a clrVerticalNavLink routerLinkActive="active" [routerLink]="menu.route_redirect"
+        *ngIf="menu.route_type === 'item' || menu.routes?.length == 0">
+        <cds-icon [shape]="menu.route_icon" clrVerticalNavIcon></cds-icon> {{ menu.route_display_name }}
+      </a>
+    </span>
+  </div>
+
+</clr-vertical-nav>

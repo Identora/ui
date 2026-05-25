@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="card-block">
+    <div class="clr-row">
+      <div class="clr-col">
+        <div class="card-media-block">
+          <div class="profile-picture">
+            <img src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80' class="card-media-image">
+            <i class="fa fa-edit" (click)="fileInput.click()">
+              <span><cds-icon shape="pencil"></cds-icon></span>
+              <input #fileInput type="file" (change)="fileChangeEvent($event)" style="display:none;" />
+            </i>
+          </div>
+          <div class="card-media-description">
+            <span class="card-media-title">
+              <h4 style="margin: 0">Lucas Ribeiro</h4>
+            </span>
+            <span class="card-media-text">Employee ID: #xxxxx</span>
+          </div>
+        </div>
+      </div>
+      <div class="clr-col">
+        <div class="card-media-block">
+          <div class="card-media-description">
+            <span class="card-media-title"><b>Cargo:</b> xxxx</span>
+            <span class="card-media-text"><b>Ultimo Acesso:</b> xxxx</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card bubble-card" style="width: 400px">
+  <div class="card-block">
+    <div class="clr-row">
+      <div class="clr-col" [style.min-width.px]="150" [style.max-width.px]="150">
+        <div class="card-media-block">
+          <div class="profile-picture-bubble">
+            <img src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80' class="card-media-image-bubble">
+          </div>
+        </div>
+      </div>
+      <div class="clr-col card-media-description">
+        <span class="clr-row card-media-title"><h4 style="margin: 0">Lucas Ribeiro</h4></span>
+        <span class="clr-row" cds-text="caption">Analista de TI</span>
+        <span class="clr-row stats" style="margin-top: 10px">
+          <div class="clr-col">
+            <span class="articles">Equipes</span><br>
+            <span class="number" cds-text="caption">3</span>
+          </div>
+          <div class="clr-col">
+            <span class="followers">Projetos</span><br>
+            <span class="number" cds-text="caption">4</span>
+          </div>
+          <div class="clr-col">
+            <span class="rating">Rating</span><br>
+            <span class="number" cds-text="caption">7.7</span>
+          </div>
+        </span>
+        <span class="clr-row" style="margin-top: 10px">
+          <button class="clr-col btn btn-sm btn-outline-primary" style="padding: 1px">Chat</button>
+          <button class="clr-col btn btn-sm btn-primary" style="padding: 1px">MAIL</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

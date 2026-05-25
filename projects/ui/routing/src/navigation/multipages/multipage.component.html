@@ -1,0 +1,21 @@
+<div class="tabs container-column" *ngIf="!loading">
+    <ul id="demoTabs" class="nav div-fixed" role="tablist">
+      <li *ngFor="let page of routed.routes" role="presentation" class="nav-item">
+        <button class="btn btn-link nav-link"
+              [routerLink]="page.route_redirect"
+              routerLinkActive="active"
+              aria-controls="tabs-content">
+              {{page.route_display_name}}
+        </button>
+      </li>
+    </ul>
+    <div id="tabs-content" class="container-content">
+      <router-outlet></router-outlet>
+    </div>
+</div>
+
+<div class='loading' *ngIf="this.loading">
+  <div class='loading-box'>
+    <clr-spinner></clr-spinner>
+  </div>
+</div>

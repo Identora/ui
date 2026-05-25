@@ -1,0 +1,54 @@
+<table class="table table-vertical table-compact table-noborder">
+  <tbody>
+    <tr><th colspan="2">Desenvolvimento</th></tr>
+    <tr>
+      <th>Nome</th>
+      <td>{{ packagejson.name }}</td>
+    </tr>
+    <tr>
+      <th>Build</th>
+      <td>{{ packagejson.version }}</td>
+    </tr>
+    <tr>
+      <th>Descrição</th>
+      <td>{{ packagejson.description || 'Sem descrição disponível' }}</td>
+    </tr>
+    <tr>
+      <th>Licença</th>
+      <td>{{ packagejson.license || 'N/A' }}</td>
+    </tr>
+    <tr>
+      <th>Data do Build</th>
+      <td>{{ packagejson.buildDate | date:'dd/MM/yyyy HH:mm' }}</td>
+    </tr>
+    <tr>
+      <th>Repositório</th>
+      <td><a href="{{ packagejson.repository?.url }}" target="_blank">{{ packagejson.repository?.url }}</a></td>
+    </tr>
+    <tr>
+      <th>Ambiente</th>
+      <td>{{ packagejson.environment || 'Desconhecido' }}</td>
+    </tr>
+    <tr><th colspan="2">Responsável</th></tr>
+    <tr>
+      <th>Desenvolvedor</th>
+      <td>{{ packagejson.developer?.name }}</td>
+    </tr>
+    <tr>
+      <th>GitHub</th>
+      <td><a href="{{ packagejson.developer?.homepage }}" target="_blank">{{ packagejson.developer?.homepage }}</a></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>{{ packagejson.developer?.email }}</td>
+    </tr>
+    <tr>
+      <th>Documentação</th>
+      <td><a href="{{ packagejson.docs }}" target="_blank">Ver Docs</a></td>
+    </tr>
+    <tr>
+      <th>Reportar Bug</th>
+      <td><a href="{{ packagejson.issues }}" target="_blank">Abrir Issue</a></td>
+    </tr>
+  </tbody>
+</table>

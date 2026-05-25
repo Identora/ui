@@ -1,0 +1,153 @@
+* { scrollbar-width: thin; }
+*::-webkit-scrollbar { width: 2px; }
+*::-webkit-scrollbar-track { background: black; }
+*::-webkit-scrollbar-thumb { background-color: white; margin: 1px; }
+
+.loading {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  .teste {
+    height: 150px;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+    p { margin: 0; margin-top: 10px; }
+    button { margin: 5px; }
+  }
+}
+
+.container {
+  min-width: 1055px;
+  max-width: 100%;
+  margin: auto;
+  height: calc(100vh - 5.5rem);
+  .messaging {
+    height: 100%;
+    .inbox_msg {
+      clear: both;
+      overflow: hidden;
+      height: 100%;
+      .inbox_people {
+        width: 450px;
+        height: 100%;
+        float: left;
+        overflow: hidden;
+        border-right: 1px solid #c4c4c4;
+        .headind_srch {
+          padding: 10px 0px 10px 20px;
+          overflow: hidden;
+          .recent_heading {
+            float: left;
+            width: 200px;
+            h4 { font-size: 21px; margin: auto; }
+          }
+          .srch_bar {
+            display: inline-block;
+            width: 200px;
+            margin-left: 5px;
+            input { border-width: 0 0 1px 0; width: 100%; padding: 2px 0 4px 6px; background: none; }
+            .input-group-addon button { background: none; border: none; padding: 0; color: #707070; font-size: 18px; }
+            .input-group-addon { margin: 0 0 0 -27px; }
+          }
+        }
+        .inbox_chat {
+          width: 100%;
+          height: calc(100% - 52px);
+          overflow-y: auto;
+          .chat_list {
+            border-bottom: 1px solid #c4c4c4;
+            margin: 0;
+            padding: 18px 16px 10px;
+            .active_chat { background: #ebebeb; }
+            .chat_people {
+              overflow: hidden;
+              clear: both;
+              .chat_img { float: left; width: 11%; }
+              .chat_ib {
+                float: left;
+                padding: 0 0 0 15px;
+                width: 88%;
+                h5 { font-size: 15px; margin: 0 0 8px 0; span { font-size: 13px; float: right; } }
+                p { font-size: 14px; margin: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+              }
+            }
+          }
+        }
+      }
+      .mesgs {
+        min-width: 600px;
+        width: calc(100% - 450px);
+        height: 100%;
+        float: left;
+        padding: 0 5px;
+        .heading_chat {
+          padding: 2px;
+          border-bottom: 1px solid #c4c4c4;
+          height: 55px;
+          .heading_element {
+            margin: 5px;
+            display: inline-block;
+            vertical-align: middle;
+            .heading_element_img { display: inline-block; width: 44px; }
+            h4 { margin: 0 auto; }
+          }
+        }
+        .msg_history {
+          height: calc(100% - 105px);
+          overflow: hidden;
+          overflow-y: auto;
+          .received_msg {
+            display: inline-block;
+            padding: 0 0 0 10px;
+            vertical-align: top;
+            width: 92%;
+            margin: 5px 0;
+            .received_withd_msg {
+              min-width: 50px;
+              width: max-content;
+              max-width: 57%;
+              overflow-wrap: break-word;
+              p { background: #ebebeb; border-radius: 3px; color: #646464; font-size: 14px; margin: 0; padding: 5px 10px 5px 12px; width: 100%; }
+            }
+          }
+          .outgoing_msg {
+            overflow: hidden;
+            margin: 5px 0;
+            .sent_msg {
+              float: right;
+              min-width: 50px;
+              width: max-content;
+              max-width: 57%;
+              p { background: #05728f; border-radius: 3px; font-size: 14px; margin: 0; color: #fff; padding: 5px 10px 5px 12px; width: 100%; }
+            }
+          }
+        }
+        .type_msg {
+          border-top: 1px solid #c4c4c4;
+          position: relative;
+          .input_msg_write input { background: none; border: none; color: #4c4c4c; font-size: 15px; min-height: 50px; width: 100%; }
+          .msg_send_btn {
+            background: #05728f;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            font-size: 17px;
+            height: 33px;
+            position: absolute;
+            right: 0;
+            top: 11px;
+            width: 33px;
+            transition: all .1s ease-in;
+            &:hover { transform: translateY(-.1rem); box-shadow: 0px 0px 40px 20px #bed62f; }
+          }
+        }
+      }
+    }
+  }
+}
+
+img { max-width: 100%; }
+.time_date { display: block; font-size: 12px; margin: 8px 0 0; }

@@ -1,0 +1,15 @@
+<div class="tabs-vertical container-row" *ngIf="!loading">
+    <ul id="demoTabs" class="nav" role="tablist">
+      <li *ngFor="let submenu of this.routed.routes" role="presentation" class="nav-item">
+        <button class="btn btn-link nav-link"
+              [routerLink]="submenu.route_redirect"
+              routerLinkActive="active"
+              aria-controls="tabs-content">
+              {{submenu.route_display_name}}
+        </button>
+      </li>
+    </ul>
+    <div id="tabs-content" class="container-content">
+      <router-outlet></router-outlet>
+    </div>
+</div>

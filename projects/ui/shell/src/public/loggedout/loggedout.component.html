@@ -1,0 +1,17 @@
+<div class="login-wrapper" [ngClass]="{ 'background': true }">
+  <div class="login">
+    <div class="login-body" style="width: 400px;">
+      <section class="title">
+        <div class="welcome">Sua sessão foi finalizada.</div>
+        <div class="hint">Volte a qualquer momento.</div>
+      </section>
+      <div class="login-group" style="padding: 0;">
+        <p>
+          Para continuar acessando os recursos da aplicação é necessário realizar login novamente.
+        </p>
+        <br>
+        <button class="btn btn-primary" (click)="goToLogin()">Entrar novamente</button>
+      </div>
+    </div>
+  </div>
+</div>
