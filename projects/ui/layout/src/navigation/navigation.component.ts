@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BreadCrumb, ViewService } from '@identora/auth/core';
@@ -9,6 +9,7 @@ import { ClaritySharedModule } from '@identora/ui';
   imports: [ClaritySharedModule, RouterOutlet],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class NavigationComponent implements OnInit, OnDestroy {
 

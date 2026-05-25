@@ -1,7 +1,33 @@
-.url-redirecter {
-  margin: 10px !important;
-  max-height: 24px;
+.container-column {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
+  .container-fixed {
+    margin: 10px !important;
+    max-height: 24px;
+    flex: 1 1 auto;
+  }
+
+  .container-content {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
 }
-.first-breadcrumb-redirect {
-  min-height: calc(100% - 44px);
+
+.container-row {
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+
+  .container-fixed {
+    margin: 10px !important;
+    max-height: 24px;
+    flex: 1 1 auto;
+  }
+
+  .container-content {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
 }
