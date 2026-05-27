@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AppDef, AuthorizationService, RealmAppsService, ViewService } from '@identora/auth/core';
 import { ClaritySharedModule, DensityService, Route, ThemeService, ThemeUrl } from '@identora/ui';
 
 @Component({
   selector: 'purp-header',
-  imports: [CommonModule, ClaritySharedModule, RouterLink],
+  imports: [CommonModule, ClaritySharedModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

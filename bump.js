@@ -8,6 +8,8 @@ if (!['major', 'minor', 'patch'].includes(type)) {
 }
 
 const pkgPath = path.join(__dirname, 'projects', 'ui', 'package.json');
+const rootPkgPath = path.join(__dirname, 'package.json');
+
 const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
 let [major, minor, patch] = pkg.version.split('.').map(Number);
 
@@ -17,4 +19,9 @@ if (type === 'patch') { patch++; }
 
 pkg.version = `${major}.${minor}.${patch}`;
 fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+
+const rootPkg = JSON.parse(fs.readFileSync(rootPkgPath, 'utf8'));
+rootPkg.version = pkg.version;
+fs.writeFileSync(rootPkgPath, JSON.stringify(rootPkg, null, 2) + '\n');
+
 console.log(`@identora/ui bumped to ${pkg.version}`);

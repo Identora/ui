@@ -1,7 +1,16 @@
 import { Component, Inject, Injectable, Optional, Type } from '@angular/core';
 import { ComponentRoute, COMPONENT_ROUTES } from './component-routes.token';
 
-@Component({ selector: 'purp-no-content', template: '' })
+@Component({
+  selector: 'purp-no-content',
+  template: `
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:3rem;color:#666;text-align:center;">
+      <p style="font-size:1rem;margin:0;">Nenhum conteúdo disponível para esta página.</p>
+    </div>
+  `,
+  imports: [],
+  standalone: true,
+})
 class NoContentComponent {}
 
 @Injectable({ providedIn: 'root' })

@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ClaritySharedModule, Route } from '@identora/ui';
+import { ViewService } from '@identora/auth/core';
 
 @Component({
   selector: 'purp-sidebar',
@@ -17,10 +18,23 @@ export class SidebarComponent implements OnInit, OnDestroy {
   public loading = true;
   private show: Subscription = new Subscription();
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private viewService: ViewService,
+  ) {}
 
   ngOnInit(): void {
-    this.changeDetectorRef.detectChanges();
+    this.show = this.viewService.logControl$.subscribe(logControl => {
+      if (!logControl) {
+        this.menus = [];
+        this.loading = false;
+        return;
+      }
+      const found = logControl.findIndex(r => r.route_type === 'navigation');
+      this.menus = found !== -1 ? (logControl[found]?.routes ?? []) : [];
+      this.loading = false;
+      this.changeDetectorRef.detectChanges();
+    });
   }
 
   ngOnDestroy(): void {

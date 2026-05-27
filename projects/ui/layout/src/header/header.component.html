@@ -33,6 +33,7 @@
             </a>
         </div>
 
+        <!-- header com filhos: dropdown -->
         <div class="header-actions" *ngIf="(header?.routes?.length || 0) > 0 && header?.route_type == 'header'">
             <clr-dropdown>
                 <button class="nav-icon" clrDropdownToggle>
@@ -40,16 +41,11 @@
                     <cds-icon shape="angle" direction="down"></cds-icon>
                 </button>
                 <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                    <a *ngFor="let navigation of header.routes" [routerLink]="navigation.route_redirect"
+                    <a *ngFor="let navigation of header.routes"
+                        [routerLink]="navigation.route_redirect"
                         clrDropdownItem>
-                        <div class="clr-row">
-                            <div class="clr-col-auto">
-                                <cds-icon [shape]="navigation.route_icon" />
-                            </div>
-                            <div class="clr-col">
-                                {{ navigation.route_display_name }}
-                            </div>
-                        </div>
+                        <cds-icon [shape]="navigation.route_icon"></cds-icon>
+                        {{ navigation.route_display_name }}
                     </a>
                 </clr-dropdown-menu>
             </clr-dropdown>
@@ -85,16 +81,11 @@
                     <cds-icon shape="angle" direction="down"></cds-icon>
                 </button>
                 <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                    <a *ngFor="let navigation of header.routes" [routerLink]="navigation.route_redirect"
+                    <a *ngFor="let navigation of header.routes"
+                        [routerLink]="navigation.route_redirect"
                         clrDropdownItem>
-                        <div class="clr-row">
-                            <div class="clr-col-auto">
-                                <cds-icon [shape]="navigation.route_icon" />
-                            </div>
-                            <div class="clr-col">
-                                {{ navigation.route_display_name }}
-                            </div>
-                        </div>
+                        <cds-icon [shape]="navigation.route_icon"></cds-icon>
+                        {{ navigation.route_display_name }}
                     </a>
                 </clr-dropdown-menu>
             </clr-dropdown>
