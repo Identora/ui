@@ -1,5 +1,5 @@
 import { EnvironmentProviders, makeEnvironmentProviders } from '@angular/core';
-import { COMPONENT_ROUTES, ComponentRoute } from '@identora/ui/routing';
+import { COMPONENT_ROUTES, ComponentRoute } from '@sp1ne/angular/routing';
 import { BASE_COMPONENTS } from './base-components';
 import { APP_PACKAGE_INFO, PackageInfo } from './tokens';
 

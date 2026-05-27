@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthorizationService, ViewService } from '@identora/auth/core';
+import { AuthorizationService, ViewService } from '@cl4im/angular/core';
 
 @Component({
   selector: 'app-login',

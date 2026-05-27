@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, ComponentRef, Input, ViewChild, ViewContainerRef } from '@angular/core';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ViewService } from '@identora/auth/core';
-import { ClaritySharedModule, Route } from '@identora/ui';
+import { ViewService } from '@cl4im/angular/core';
+import { ClaritySharedModule, Route } from '@sp1ne/angular';
 import { LoggerService } from '../logger.service';
 import { ComponentDistributorService } from '../component-distributor.service';
 

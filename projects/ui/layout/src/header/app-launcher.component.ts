@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { AppDef, AuthorizationService, RealmAppsService } from '@identora/auth/core';
-import { ClaritySharedModule } from '@identora/ui';
+import { AppDef, AuthorizationService, RealmAppsService } from '@cl4im/angular/core';
+import { ClaritySharedModule } from '@sp1ne/angular';
 
 @Component({
   selector: 'purp-app-launcher',

@@ -24,4 +24,4 @@ const rootPkg = JSON.parse(fs.readFileSync(rootPkgPath, 'utf8'));
 rootPkg.version = pkg.version;
 fs.writeFileSync(rootPkgPath, JSON.stringify(rootPkg, null, 2) + '\n');
 
-console.log(`@identora/ui bumped to ${pkg.version}`);
+console.log(`@sp1ne/angular bumped to ${pkg.version}`);

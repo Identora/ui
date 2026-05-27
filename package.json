@@ -1,10 +1,10 @@
 {
-  "name": "@identora/ui",
-  "version": "0.1.9",
-  "description": "Purp UI component library for Angular",
+  "name": "@sp1ne/angular",
+  "version": "0.0.1",
+  "description": "sp1ne UI component library for Angular",
   "scripts": {
     "build": "ng-packagr -p projects/ui/ng-package.json",
-    "release": "npm run build && cd dist/ui && npm publish",
+    "release": "npm run build && cd dist/ui && npm publish --access public",
     "release:patch": "node bump.js patch && npm run release",
     "release:minor": "node bump.js minor && npm run release",
     "release:major": "node bump.js major && npm run release",
@@ -33,8 +33,8 @@
     "@angular/router": "^19.2.17",
     "@cds/angular": "^6.16.1",
     "@cds/core": "^6.16.1",
+    "@cl4im/angular": "^0.0.1",
     "@clr/angular": "^17.12.1",
-    "@identora/auth": "^0.1.0",
     "ng-packagr": "^19.2.0",
     "rxjs": "~7.8.0",
     "typescript": "~5.7.0"

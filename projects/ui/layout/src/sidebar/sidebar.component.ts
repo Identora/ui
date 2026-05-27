@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ClaritySharedModule, Route } from '@identora/ui';
-import { ViewService } from '@identora/auth/core';
+import { ClaritySharedModule, Route } from '@sp1ne/angular';
+import { ViewService } from '@cl4im/angular/core';
 
 @Component({
   selector: 'purp-sidebar',

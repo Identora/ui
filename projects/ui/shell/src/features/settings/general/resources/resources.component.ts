@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ClaritySharedModule } from '@identora/ui';
+import { ClaritySharedModule } from '@sp1ne/angular';
 
 @Component({
   selector: 'app-resources',

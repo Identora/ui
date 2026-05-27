@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { PrivateGuard } from '@identora/auth/core';
-import { LayoutComponent } from '@identora/ui/layout';
+import { PrivateGuard } from '@cl4im/angular/core';
+import { LayoutComponent } from '@sp1ne/angular/layout';
 import { PRIVATE_ROUTES } from './private.routes';
 import { PUBLIC_ROUTES } from './public.routes';
 

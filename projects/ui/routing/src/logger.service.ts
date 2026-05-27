@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Route } from '@identora/ui';
+import { Route } from '@sp1ne/angular';
 
 @Injectable({ providedIn: 'root' })
 export class LoggerService {

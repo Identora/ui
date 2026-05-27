@@ -3,12 +3,12 @@
     "baseUrl": "./",
     "ignoreDeprecations": "6.0",
     "paths": {
-      "@identora/ui":         ["projects/ui/src/public-api"],
-      "@identora/ui/layout":  ["projects/ui/layout/src/public-api"],
-      "@identora/ui/routing": ["projects/ui/routing/src/public-api"],
-      "@identora/auth":       ["node_modules/@identora/auth"],
-      "@identora/auth/util":  ["node_modules/@identora/auth/util"],
-      "@identora/auth/core":  ["node_modules/@identora/auth/core"]
+      "@sp1ne/angular":         ["projects/ui/src/public-api"],
+      "@sp1ne/angular/layout":  ["projects/ui/layout/src/public-api"],
+      "@sp1ne/angular/routing": ["projects/ui/routing/src/public-api"],
+      "@cl4im/angular":       ["node_modules/@cl4im/angular"],
+      "@cl4im/angular/util":  ["node_modules/@cl4im/angular/util"],
+      "@cl4im/angular/core":  ["node_modules/@cl4im/angular/core"]
     },
     "target": "ES2022",
     "module": "ES2022",

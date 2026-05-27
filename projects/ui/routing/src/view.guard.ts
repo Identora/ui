@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Route, Router, RouterStateSnapshot } from '@angular/router';
-import { ViewService } from '@identora/auth/core';
+import { ViewService } from '@cl4im/angular/core';
 import { LoggerService } from './logger.service';
 
 @Injectable({ providedIn: 'root' })

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClaritySharedModule } from '@identora/ui';
+import { ClaritySharedModule } from '@sp1ne/angular';
 
 @Component({
   selector: 'app-profile',

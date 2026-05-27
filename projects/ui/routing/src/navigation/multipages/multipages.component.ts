@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { ClaritySharedModule, Route } from '@identora/ui';
+import { ClaritySharedModule, Route } from '@sp1ne/angular';
 
 @Component({
   selector: 'app-multipages',

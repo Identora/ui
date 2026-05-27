@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
-import { ClaritySharedModule } from '@identora/ui';
+import { ClaritySharedModule } from '@sp1ne/angular';
 
 export interface TimeZoneSelect {
   view: string;

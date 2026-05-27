@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClaritySharedModule } from '@identora/ui';
+import { ClaritySharedModule } from '@sp1ne/angular';
 
 export interface DocItem {
   doc_icon: string;

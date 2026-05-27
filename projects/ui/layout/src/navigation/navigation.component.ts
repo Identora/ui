@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { BreadCrumb, ViewService } from '@identora/auth/core';
-import { ClaritySharedModule } from '@identora/ui';
+import { BreadCrumb, ViewService } from '@cl4im/angular/core';
+import { ClaritySharedModule } from '@sp1ne/angular';
 
 @Component({
   selector: 'purp-navigation',

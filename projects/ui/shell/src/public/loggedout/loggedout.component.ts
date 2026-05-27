@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { AuthorizationService } from '@identora/auth/core';
+import { AuthorizationService } from '@cl4im/angular/core';
 
 @Component({
   selector: 'loggedout',

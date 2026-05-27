@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClaritySharedModule } from '@identora/ui';
+import { ClaritySharedModule } from '@sp1ne/angular';
 import { APP_PACKAGE_INFO, PackageInfo } from '../../../tokens';
 
 @Component({

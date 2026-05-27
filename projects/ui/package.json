@@ -1,6 +1,6 @@
 {
-  "name": "@identora/ui",
-  "version": "0.1.9",
+  "name": "@sp1ne/angular",
+  "version": "0.0.1",
   "publishConfig": {
     "access": "public"
   },

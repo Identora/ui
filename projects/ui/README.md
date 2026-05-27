@@ -1,28 +1,28 @@
-# @identora/ui
+# @sp1ne/angular
 
 Angular UI shell library built on top of [Clarity Design System](https://clarity.design). Provides the full application frame — layout, navigation, routing infrastructure, and a set of built-in feature pages — for Identora applications.
 
-> **Requires `@identora/auth`.**  
-> Layout components, the route guard, and all shell pages depend on services provided by `@identora/auth/core` (`AuthorizationService`, `ViewService`, `RealmAppsService`). Both libraries must be registered in the same application.
+> **Requires `@cl4im/angular`.**  
+> Layout components, the route guard, and all shell pages depend on services provided by `@cl4im/angular/core` (`AuthorizationService`, `ViewService`, `RealmAppsService`). Both libraries must be registered in the same application.
 
 ## Entry Points
 
 | Import path | Purpose |
 |---|---|
-| `@identora/ui` | Core providers, theme, density, Clarity re-exports |
-| `@identora/ui/layout` | Layout, header, sidebar, navigation components |
-| `@identora/ui/routing` | Hierarchical router components, view guard, component distributor |
-| `@identora/ui/shell` | Route arrays, public/private pages, `provideShell()` |
+| `@sp1ne/angular` | Core providers, theme, density, Clarity re-exports |
+| `@sp1ne/angular/layout` | Layout, header, sidebar, navigation components |
+| `@sp1ne/angular/routing` | Hierarchical router components, view guard, component distributor |
+| `@sp1ne/angular/shell` | Route arrays, public/private pages, `provideShell()` |
 
 ---
 
 ## Installation
 
 ```bash
-npm install @identora/ui
+npm install @sp1ne/angular
 ```
 
-`@identora/auth` must also be installed — it is a peer dependency, not bundled here.
+`@cl4im/angular` must also be installed — it is a peer dependency, not bundled here.
 
 ---
 
@@ -31,9 +31,9 @@ npm install @identora/ui
 A minimal `app.config.ts`:
 
 ```ts
-import { provideAuth }  from '@identora/auth/core';
-import { provideUi }    from '@identora/ui';
-import { provideShell, APP_ROUTES } from '@identora/ui/shell';
+import { provideAuth }  from '@cl4im/angular/core';
+import { provideUi }    from '@sp1ne/angular';
+import { provideShell, APP_ROUTES } from '@sp1ne/angular/shell';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -56,7 +56,7 @@ export const appConfig: ApplicationConfig = {
 
 ---
 
-## `@identora/ui`
+## `@sp1ne/angular`
 
 ### `provideUi()`
 
@@ -67,7 +67,7 @@ Registers `ThemeService` and `DensityService` initializers as `APP_INITIALIZER` 
 Manages light/dark theme switching. The active theme is persisted to `localStorage` and restored on startup.
 
 ```ts
-import { ThemeService } from '@identora/ui';
+import { ThemeService } from '@sp1ne/angular';
 
 themeService.toggle();          // switch between light and dark
 themeService.set('dark');       // set explicitly
@@ -80,7 +80,7 @@ themeService.theme$             // Observable<'light' | 'dark'>
 Controls Clarity's spacing density. Persisted to `localStorage`.
 
 ```ts
-import { DensityService } from '@identora/ui';
+import { DensityService } from '@sp1ne/angular';
 
 densityService.set('compact');  // 'default' | 'regular' | 'compact'
 densityService.current          // DensitySetting
@@ -91,12 +91,12 @@ densityService.current          // DensitySetting
 Re-exports `ClarityModule`, `ClrButtonModule`, `ClrIconModule`, and `CdsModule` with all icon sets pre-loaded (Core, Essential, Commerce, Chart, Media, Social, Technology, TextEdit, Travel, Mini). Import this module instead of individual Clarity imports.
 
 ```ts
-import { ClaritySharedModule } from '@identora/ui';
+import { ClaritySharedModule } from '@sp1ne/angular';
 ```
 
 ---
 
-## `@identora/ui/layout`
+## `@sp1ne/angular/layout`
 
 Contains the four visual frame components. They are rendered automatically by `LayoutComponent` — you do not need to place them manually.
 
@@ -128,7 +128,7 @@ Depends on: `ViewService` for the breadcrumb trail.
 
 ---
 
-## `@identora/ui/routing`
+## `@sp1ne/angular/routing`
 
 ### Hierarchical router components
 
@@ -177,7 +177,7 @@ interface ComponentRoute {
 
 ---
 
-## `@identora/ui/shell`
+## `@sp1ne/angular/shell`
 
 ### `provideShell(options: ShellOptions)`
 
@@ -203,7 +203,7 @@ Create `features.routes.ts` and list every lazy component the app can render, ke
 
 ```ts
 // src/app/features/features.routes.ts
-import { ComponentRoute } from '@identora/ui/routing';
+import { ComponentRoute } from '@sp1ne/angular/routing';
 
 export const components: ComponentRoute[] = [
   {
@@ -245,9 +245,9 @@ The following pages are registered automatically by `provideShell()` and do not 
 
 ---
 
-## Dependency on `@identora/auth`
+## Dependency on `@cl4im/angular`
 
-`@identora/ui` does not re-export or bundle `@identora/auth`. The dependency is **structural**: layout and routing components inject services that must be provided externally by the consuming app.
+`@sp1ne/angular` does not re-export or bundle `@cl4im/angular`. The dependency is **structural**: layout and routing components inject services that must be provided externally by the consuming app.
 
 | UI component / service | Auth dependency injected |
 |---|---|
@@ -259,15 +259,15 @@ The following pages are registered automatically by `provideShell()` and do not 
 | `LoginComponent` | `AuthorizationService` |
 | `ComponentDistributorService` | `ViewService` (indirectly, via `LoggerService`) |
 
-All of these are provided by `provideAuth()` from `@identora/auth/core`. If `provideAuth()` (or an equivalent `{ provide: AUTH_CONFIG, useValue: ... }` + manual service provision) is missing from the application, the app will throw injection errors at runtime.
+All of these are provided by `provideAuth()` from `@cl4im/angular/core`. If `provideAuth()` (or an equivalent `{ provide: AUTH_CONFIG, useValue: ... }` + manual service provision) is missing from the application, the app will throw injection errors at runtime.
 
 The minimum required setup:
 
 ```ts
 // app.config.ts
 providers: [
-  provideAuth(environment.auth),  // @identora/auth/core — REQUIRED
-  provideUi(),                    // @identora/ui
+  provideAuth(environment.auth),  // @cl4im/angular/core — REQUIRED
+  provideUi(),                    // @sp1ne/angular
   provideShell({ appComponents, packageInfo }),
   provideRouter([...appRoutes, ...APP_ROUTES]),
   provideHttpClient(),
@@ -288,4 +288,4 @@ providers: [
 | `@clr/angular` | `^17.0.0` |
 | `@cds/core` | `^17.0.0` |
 | `rxjs` | `^7.0.0` |
-| `@identora/auth` | `^0.1.0` |
+| `@cl4im/angular` | `^0.1.0` |

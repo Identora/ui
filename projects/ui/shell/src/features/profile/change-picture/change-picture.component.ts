@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ClaritySharedModule } from '@identora/ui';
+import { ClaritySharedModule } from '@sp1ne/angular';
 
 @Component({
   selector: 'app-change-picture',

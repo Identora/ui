@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AUTH_CONFIG, AuthConfig, AuthorizationService } from '@identora/auth/core';
+import { AUTH_CONFIG, AuthConfig, AuthorizationService } from '@cl4im/angular/core';
 
 @Component({
   selector: 'app-callback',

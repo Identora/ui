@@ -1,4 +1,4 @@
-import { ComponentRoute } from '@identora/ui/routing';
+import { ComponentRoute } from '@sp1ne/angular/routing';
 
 export const BASE_COMPONENTS: ComponentRoute[] = [
   {
